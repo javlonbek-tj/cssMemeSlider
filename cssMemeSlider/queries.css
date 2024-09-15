@@ -1,0 +1,15 @@
+@media screen and (max-width: 500px) {
+  .slider {
+    row-gap: 2rem;
+  }
+
+  .slider__text {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+  }
+
+  .slider__dots {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+}
