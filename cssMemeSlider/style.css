@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212529;
+}
+
+.slider {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  row-gap: 3rem;
+  max-width: 70rem;
+  margin: 5rem;
+  overflow: hidden;
+}
+
+.slider__images {
+  grid-column: 1/-1;
+  display: flex;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider__images img {
+  width: 100%;
+  border-radius: 1.2rem;
+}
+
+.slider__text {
+  width: 100%;
+  overflow: hidden;
+  margin-left: 1px;
+}
+
+.slider__titles {
+  display: flex;
+  width: 400%;
+  color: #fff;
+}
+
+.slider__title {
+  display: inline-block;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+#img1:checked ~ .slider__images,
+#img1:checked ~ .slider__text .slider__titles .slider__title {
+  transform: translateX(0);
+}
+#img2:checked ~ .slider__images,
+#img2:checked ~ .slider__text .slider__titles .slider__title {
+  transform: translateX(-100%);
+}
+#img3:checked ~ .slider__images,
+#img3:checked ~ .slider__text .slider__titles .slider__title {
+  transform: translateX(-200%);
+}
+#img4:checked ~ .slider__images,
+#img4:checked ~ .slider__text .slider__titles .slider__title {
+  transform: translateX(-300%);
+}
+
+.slider__dots {
+  justify-self: end;
+}
+
+.slider input {
+  display: none;
+}
+
+.slider__dots {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.slider__dot {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #8d3fd6;
+  transition: background-color 0.5s;
+}
+
+.slider__circle:hover {
+  background-color: #fff;
+}
+
+#img1:checked ~ .slider__dots .slider__circle--1,
+#img2:checked ~ .slider__dots .slider__circle--2,
+#img3:checked ~ .slider__dots .slider__circle--3,
+#img4:checked ~ .slider__dots .slider__circle--4 {
+  background: transparent;
+  border: 2px solid #8d3fd6;
+}
+
+#img1:checked ~ .slider__dots .slider__circle--1:hover,
+#img2:checked ~ .slider__dots .slider__circle--2:hover,
+#img3:checked ~ .slider__dots .slider__circle--3:hover,
+#img4:checked ~ .slider__dots .slider__circle--4:hover {
+  border-color: #fff;
+}
