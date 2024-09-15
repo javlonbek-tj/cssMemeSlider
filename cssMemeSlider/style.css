@@ -33,6 +33,7 @@ body {
 
 .slider__images img {
   width: 100%;
+  border-radius: 1.2rem;
 }
 
 .slider__text {
